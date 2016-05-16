@@ -3,8 +3,7 @@ TOTAL_MEMORY=$( free | grep Mem: | awk '{ print $2 }' )
 #echo $TOTAL_MEMORY
 USED_MEMORY=$( free | grep Mem: | awk '{ print $3 }' )
 #echo $USED_MEMORY
-percentage=$(free -m | awk 'NR==2{printf "%.0f", $3*100/$2 }')
-#percentage=$(free | grep Mem | awk '{print $3/$2 * 100.0}')
+percentage=$(free | grep Mem | awk '{printf "%.0f", $3/$2 * 100}')
 #echo $percentage
 
 email=""
